@@ -13,15 +13,16 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='px-5 py-20 min-h-screen relative flex md:items-center'>
-        {/* <Hero /> */}
+      <main className='px-5 py-20 min-h-screen relative flex flex-col md:items-center'>
+        <Hero />
 
         <div className='pointer-events-none absolute inset-0 overflow-hidden w-full max-w-[1500px] mx-auto'>
           <div style={{ transform: 'translateY(0px)' }}>
             <Image
               src={bg}
               alt=''
-              className='w-full h-full mix-blend-multiply will-change-transform object-cover mx-auto xl:min-h-0 min-h-[30vh] opacity-[0.3]'
+              priority
+              className='w-full max-w-none min-w-[1500px] relative -left-[34rem] md:left-0 h-full mix-blend-multiply will-change-transform object-cover mx-auto xl:min-h-0 min-h-[30vh] opacity-[0.3]'
             />
           </div>
         </div>
