@@ -6,7 +6,7 @@ type ContainerProps = {
 
 const Container: FC<ContainerProps> = (props) => {
   return (
-    <div className='container max-w-2xl mx-auto relative z-20'>
+    <div className='container w-full max-w-2xl mx-auto relative z-20'>
       {props.children}
     </div>
   );
