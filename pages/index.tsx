@@ -1,5 +1,8 @@
-import Form from '@/components/Form';
+import Hero from '@/components/home/Hero';
 import Head from 'next/head';
+import Image from 'next/image';
+
+import bg from '/public/images/bg_gradient.jpeg';
 
 export default function Home() {
   return (
@@ -11,19 +14,34 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='px-5 py-20 min-h-screen relative flex md:items-center'>
-        <div className='container relative z-20 mx-auto'>
-          <div className='flex flex-col gap-2 md:gap-8 text-center'>
-            <h1 className='text-6xl md:text-9xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-slate-50 via-slate-100 to-slate-400'>
-              Danny Lev
-            </h1>
-            <p className='text-base md:text-2xl opacity-70'>
-              I&apos;m too busy creating other companies&apos; sites :)
-            </p>
-          </div>
+        {/* <Hero /> */}
 
-          <Form />
+        <div className='pointer-events-none absolute inset-0 overflow-hidden w-full max-w-[1500px] mx-auto'>
+          <div style={{ transform: 'translateY(0px)' }}>
+            <Image
+              src={bg}
+              alt=''
+              className='w-full h-full mix-blend-multiply will-change-transform object-cover mx-auto xl:min-h-0 min-h-[30vh] opacity-[0.3]'
+            />
+          </div>
         </div>
-        {/* <div className='absolute inset-0 pointer-events-none top-auto left-auto w-3/6 -right-48 -bottom-48 aspect-square opacity-70 rounded-full bg-red-600 filter blur-xl' /> */}
+
+        <svg
+          className='pointer-events-none w-full h-full inset-0 fixed isolate z-50 opacity-70 mix-blend-soft-light'
+          width='100%'
+          height='100%'>
+          <filter id='pedroduarteisalegend'>
+            <feTurbulence
+              type='fractalNoise'
+              baseFrequency='0.80'
+              numOctaves='4'
+              stitchTiles='stitch'></feTurbulence>
+          </filter>
+          <rect
+            width='100%'
+            height='100%'
+            filter='url(#pedroduarteisalegend)'></rect>
+        </svg>
       </main>
     </>
   );

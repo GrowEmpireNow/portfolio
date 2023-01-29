@@ -9,7 +9,7 @@ export default function Document() {
           rel='stylesheet'
         />
       </Head>
-      <body className='antialiased font-general text-slate-50 bg-gradient-to-br from-[#141E30] to-[#243B55]'>
+      <body className='antialiased font-general bg-[#1b1816] text-slate-50 selection:bg-purple-500/90 selection:text-white'>
         <Main />
         <NextScript />
       </body>
