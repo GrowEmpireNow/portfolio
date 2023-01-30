@@ -3,6 +3,7 @@ import Background from '@/components/Background';
 import Hero from '@/components/home/Hero';
 import Head from 'next/head';
 import BackButton from '@/components/BackButton';
+import Form from '@/components/contact/Form';
 
 type contactProps = {};
 
@@ -18,6 +19,7 @@ const contact: FC<contactProps> = ({}) => {
       <main className='md:pt-48 pt-10 pb-20 px-5 py-20 min-h-screen relative'>
         <BackButton />
         <Hero title='Contact' isShowSM={false} isContact={true} />
+        <Form />
         <Background />
       </main>
     </>
