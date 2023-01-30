@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import danny from '/public/images/danny.jpeg';
+import logo from '/public/images/logo.png';
 
 type HeroImageProps = {
   text?: string;
@@ -13,7 +13,7 @@ const HeroImage: FC<HeroImageProps> = (props) => {
     <div className='rounded-full bg-gradient-to-tl from-purple-700/60 to-rose-400/60 shadow-lg p-[3px] ring-[5px] ring-purple-500/10'>
       <div className='rounded-full w-16 h-16 overflow-hidden'>
         <Image
-          src={danny}
+          src={logo}
           alt={text}
           priority
           width={70}

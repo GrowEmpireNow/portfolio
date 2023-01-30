@@ -17,11 +17,7 @@ const contact: FC<contactProps> = ({}) => {
       </Head>
       <main className='md:pt-48 pt-10 pb-20 px-5 py-20 min-h-screen relative'>
         <BackButton />
-        <Hero
-          title='Contact'
-          isShowSM={false}
-          text="Kindly provide your email and I'll respond promptly."
-        />
+        <Hero title='Contact' isShowSM={false} isContact={true} />
         <Background />
       </main>
     </>
