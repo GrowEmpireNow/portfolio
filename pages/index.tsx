@@ -1,8 +1,29 @@
+import { FC } from 'react';
+import { LinkedInEmbed } from 'react-social-media-embed';
 import Background from '@/components/Background';
 import Hero from '@/components/home/Hero';
 import Head from 'next/head';
+import { getSocial } from '@/services';
 
-export default function Home() {
+type homeProps = {
+  socials: {
+    id: string;
+    link: string;
+    embed: string;
+  }[];
+};
+
+export async function getStaticProps() {
+  const socials = (await getSocial()) || [];
+
+  return {
+    props: {
+      socials,
+    },
+  };
+}
+
+const home: FC<homeProps> = ({ socials }) => {
   return (
     <>
       <Head>
@@ -38,7 +59,25 @@ export default function Home() {
       <main className='px-5 md:pt-48 pt-10 pb-20 py-20 min-h-screen relative'>
         <Hero isContact={false} />
         <Background />
+        <ul>
+          {socials.map((social) => (
+            <li
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+              key={social.id}>
+              <LinkedInEmbed
+                height={570}
+                postUrl={social.link}
+                url={social.embed}
+                width='100%'
+              />
+            </li>
+          ))}
+        </ul>
       </main>
     </>
   );
-}
+};
+export default home;

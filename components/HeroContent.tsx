@@ -13,7 +13,7 @@ const HeroContent: FC<HeroContentProps> = (props) => {
       <h1 className='text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-slate-50 via-slate-100 to-slate-400'>
         {title}
       </h1>
-      <h2 className='text-rose-100/60'>{subTitle}</h2>
+      <h2 className='text-rose-100/70'>{subTitle}</h2>
     </div>
   );
 };
