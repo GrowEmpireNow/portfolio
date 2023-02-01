@@ -7,7 +7,7 @@ type HeroSMProps = {};
 
 const HeroSM: FC<HeroSMProps> = () => {
   return (
-    <div className='mt-5 flex flex-wrap gap-8'>
+    <div className='mt-5 flex flex-wrap gap-5 md:gap-8'>
       {/* Linkedin */}
       <a
         href='https://www.linkedin.com/company/empire-now/'
