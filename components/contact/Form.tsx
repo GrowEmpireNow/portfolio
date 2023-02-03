@@ -70,7 +70,7 @@ const Form = () => {
               <div className='relative z-0 w-full'>
                 <input
                   autoComplete='off'
-                  className='block py-2.5 px-0 w-full text-sm text-slate-50 bg-transparent border-0 border-b-2 border-slate-300 appearance-none dark:text-white dark:border-slate-600 dark:focus:border-slate-500 focus:outline-none focus:ring-0 focus:border-slate-100 peer'
+                  className='block py-2.5 rounded-none px-0 w-full text-sm text-slate-50 bg-transparent border-0 border-b-2 border-slate-300 appearance-none dark:text-white dark:border-slate-600 dark:focus:border-slate-500 focus:outline-none focus:ring-0 focus:border-slate-100 peer'
                   placeholder=' '
                   {...register('name')}
                 />
@@ -89,7 +89,7 @@ const Form = () => {
               <div className='relative z-0 w-full'>
                 <input
                   autoComplete='off'
-                  className='block py-2.5 px-0 w-full text-sm text-slate-50 bg-transparent border-0 border-b-2 border-slate-300 appearance-none dark:text-white dark:border-slate-600 dark:focus:border-slate-500 focus:outline-none focus:ring-0 focus:border-slate-100 peer'
+                  className='block py-2.5 rounded-none px-0 w-full text-sm text-slate-50 bg-transparent border-0 border-b-2 border-slate-300 appearance-none dark:text-white dark:border-slate-600 dark:focus:border-slate-500 focus:outline-none focus:ring-0 focus:border-slate-100 peer'
                   placeholder=' '
                   {...register('email')}
                 />
@@ -109,7 +109,7 @@ const Form = () => {
                 <textarea
                   autoComplete='off'
                   id='message'
-                  className='block py-2.5 px-0 w-full text-sm text-slate-50 bg-transparent border-0 border-b-2 border-slate-300 appearance-none dark:text-white dark:border-slate-600 dark:focus:border-slate-500 focus:outline-none focus:ring-0 focus:border-slate-100 peer'
+                  className='block py-2.5 px-0 w-full rounded-none text-sm text-slate-50 bg-transparent border-0 border-b-2 border-slate-300 appearance-none dark:text-white dark:border-slate-600 dark:focus:border-slate-500 focus:outline-none focus:ring-0 focus:border-slate-100 peer'
                   {...register('message')}
                   placeholder=' '
                 />
