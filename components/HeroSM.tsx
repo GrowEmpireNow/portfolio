@@ -3,9 +3,12 @@ import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import Link from 'next/link';
 
-type HeroSMProps = {};
+type HeroSMProps = {
+  showMessage?: boolean;
+};
 
-const HeroSM: FC<HeroSMProps> = () => {
+const HeroSM: FC<HeroSMProps> = (props) => {
+  const { showMessage = false } = props;
   return (
     <div className='mt-5 flex flex-wrap gap-5 md:gap-8'>
       {/* Linkedin */}
@@ -32,9 +35,11 @@ const HeroSM: FC<HeroSMProps> = () => {
         className='flex items-center gap-1'>
         <FaTwitter /> <span className='text-xs'>Twitter</span>
       </a>
-      <Link href='/contact' className='flex items-center gap-1'>
-        <MdEmail /> <span className='text-xs'>Message</span>
-      </Link>
+      {showMessage ? (
+        <Link href='/contact' className='flex items-center gap-1'>
+          <MdEmail /> <span className='text-xs'>Message</span>
+        </Link>
+      ) : null}
     </div>
   );
 };

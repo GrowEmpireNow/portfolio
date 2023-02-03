@@ -57,9 +57,8 @@ const Form = () => {
     <section>
       <Container>
         {success ? (
-          <div className='flex flex-col gap-3 mx-auto container justify-center items-center mt-16'>
+          <div className='flex flex-col gap-3 mx-auto container mt-16'>
             <h2 className='font-medium text-xl'>Thank You!</h2>
-            <p>I&apos;ll be back yo you promptly</p>
           </div>
         ) : (
           <form

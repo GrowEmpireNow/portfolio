@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { getSocial } from '@/services';
 import Socials from '@/components/Socials';
 import FloatingCTA from '@/components/FloatingCTA';
+import Footer from '@/components/Footer';
 
 type homeProps = {
   socials: {
@@ -63,6 +64,7 @@ const home: FC<homeProps> = ({ socials }) => {
         <Socials socials={socials} />
         <FloatingCTA />
       </main>
+      <Footer />
     </>
   );
 };
