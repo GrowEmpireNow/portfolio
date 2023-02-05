@@ -35,7 +35,7 @@ const home: FC<homeProps> = ({ socials }) => {
           content="Empire Now is a CMO as a Service consultancy for B2B SaaS startups. DM to take your marketing to the next level. That's how empires are built 💪"
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/favicon.png' />
 
         <meta name='robots' content='follow, index' />
         <meta property='og:url' content={`domain`} />
