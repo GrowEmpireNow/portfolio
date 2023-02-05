@@ -2,29 +2,32 @@ import { FC } from 'react';
 import Background from '@/components/Background';
 import Hero from '@/components/home/Hero';
 import Head from 'next/head';
-import { getSocial } from '@/services';
+import { getFeed } from '@/services';
 import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
+import Feed from '@/components/Feed';
 
 type homeProps = {
-  socials: {
+  feedList: {
     id: string;
+    title: string;
+    description: string;
     link: string;
-    embed: string;
+    date: string;
   }[];
 };
 
 export async function getStaticProps() {
-  const socials = (await getSocial()) || [];
+  const feedList = (await getFeed()) || [];
 
   return {
     props: {
-      socials,
+      feedList,
     },
   };
 }
 
-const home: FC<homeProps> = ({ socials }) => {
+const home: FC<homeProps> = ({ feedList }) => {
   return (
     <>
       <Head>
@@ -60,6 +63,7 @@ const home: FC<homeProps> = ({ socials }) => {
       <main className='px-5 md:pt-48 pt-10 pb-20 py-20 min-h-screen relative'>
         <Hero isContact={false} />
         <Background />
+        <Feed feedList={feedList} />
         <FloatingCTA />
       </main>
       <Footer />
