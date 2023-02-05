@@ -41,7 +41,7 @@ const Hero: FC<HeroProps> = (props) => {
             </p>
           </div>
         )}
-        {isShowSM ? <HeroSM /> : null}
+        {isShowSM ? <HeroSM showMessage={true} /> : null}
       </Container>
     </header>
   );
