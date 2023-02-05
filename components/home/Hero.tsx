@@ -18,7 +18,7 @@ const Hero: FC<HeroProps> = (props) => {
         </div>
         {props.isContact ? (
           <div className='text-lg leading-6 text-rose-100/60 mt-5 md:mt-9'>
-            <p>Kindly provide your email and I&#39;ll respond promptly.</p>
+            <p>Let&apos;s kickstart your quest for marketing greatness</p>
           </div>
         ) : (
           <div className='flex flex-col space-y-3 text-lg leading-6 text-rose-100/60 mt-5 md:mt-9'>

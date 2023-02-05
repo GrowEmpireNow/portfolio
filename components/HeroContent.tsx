@@ -6,7 +6,8 @@ type HeroContentProps = {
 };
 
 const HeroContent: FC<HeroContentProps> = (props) => {
-  const { title = 'Empire Now', subTitle = 'CMO as a Service' } = props;
+  const { title = 'Welcome to Empire Now', subTitle = 'CMO as a Service' } =
+    props;
 
   return (
     <div>

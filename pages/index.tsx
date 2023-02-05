@@ -3,7 +3,6 @@ import Background from '@/components/Background';
 import Hero from '@/components/home/Hero';
 import Head from 'next/head';
 import { getSocial } from '@/services';
-import Socials from '@/components/Socials';
 import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
@@ -61,7 +60,6 @@ const home: FC<homeProps> = ({ socials }) => {
       <main className='px-5 md:pt-48 pt-10 pb-20 py-20 min-h-screen relative'>
         <Hero isContact={false} />
         <Background />
-        <Socials socials={socials} />
         <FloatingCTA />
       </main>
       <Footer />

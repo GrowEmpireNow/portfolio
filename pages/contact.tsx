@@ -12,7 +12,7 @@ const contact: FC<contactProps> = ({}) => {
   return (
     <>
       <Head>
-        <title>Contact | Danny Lev</title>
+        <title>Contact | Empire Now</title>
         <meta name='description' content='CMO as a Service' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.png' />
