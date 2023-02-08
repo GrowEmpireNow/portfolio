@@ -21,7 +21,7 @@ const Hero: FC<HeroProps> = (props) => {
             <p>Let&apos;s kickstart your quest for marketing greatness</p>
           </div>
         ) : (
-          <div className='flex flex-col space-y-3 text-base md:text-xl text-rose-100/90 mt-5 md:mt-9'>
+          <div className='flex flex-col space-y-3 text-base md:text-xl font-medium text-rose-100/90 mt-5 md:mt-9'>
             <p className='align-middle'>
               Tired of struggling with marketing on your own? want to take your
               startup to the next level, but don&#39;t know where to start?

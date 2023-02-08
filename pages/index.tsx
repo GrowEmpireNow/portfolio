@@ -39,9 +39,8 @@ const home: FC<homeProps> = ({ feedList }) => {
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.png' />
-
         <meta name='robots' content='follow, index' />
-        <meta property='og:url' content={`domain`} />
+        <meta property='og:url' content={`empirenow.io`} /> {/*  */}
         <meta property='og:type' content='website' />
         <meta property='og:image' content='/og_image.png' />
         <meta property='og:site_name' content='' />
@@ -50,16 +49,17 @@ const home: FC<homeProps> = ({ feedList }) => {
           content="Empire Now is a CMO as a Service consultancy for B2B SaaS startups. DM to take your marketing to the next level. That's how empires are built 💪"
         />
         <meta property='og:title' content='Empire Now' />
-
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@dannylev4' />
+        {/*  */}
         <meta name='twitter:title' content='Empire Now' />
         <meta
           name='twitter:description'
           content="Empire Now is a CMO as a Service consultancy for B2B SaaS startups. DM to take your marketing to the next level. That's how empires are built 💪"
         />
         <meta name='twitter:image' content='/og_image.png' />
-        <link rel='canonical' href='domain' />
+        <link rel='canonical' href='empirenow.io' />
+        {/*  */}
       </Head>
       <main className='px-5 md:pt-48 pt-10 pb-20 py-20 min-h-screen relative'>
         <Hero isContact={false} />
