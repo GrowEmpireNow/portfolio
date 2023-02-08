@@ -29,7 +29,7 @@ const Feed: FC<FeedProps> = (props) => {
                     {item.title}
                   </h3>
                   <p className='text-rose-100/70'>
-                    {format(new Date(item.date), 'MMM dd')}
+                    {format(new Date(item.date), 'MMM dd yyyy')}
                   </p>
                   {item.description ? (
                     <p className='mt-4 text-lg text-rose-100/70 line-clamp-3'>
