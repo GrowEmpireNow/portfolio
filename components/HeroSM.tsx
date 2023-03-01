@@ -17,7 +17,8 @@ const HeroSM: FC<HeroSMProps> = (props) => {
         target='_blank'
         rel='noreferrer noopener'
         className='flex items-center gap-1'>
-        <FaLinkedinIn /> <span className='text-xs'>Linkedin</span>
+        <FaLinkedinIn className='text-lg' />{' '}
+        <span className='text-lg'>Linkedin</span>
       </a>
       {/* Insta */}
       <a
@@ -25,7 +26,8 @@ const HeroSM: FC<HeroSMProps> = (props) => {
         target='_blank'
         rel='noreferrer noopener'
         className='flex items-center gap-1'>
-        <FaInstagram /> <span className='text-xs'>Instagram</span>
+        <FaInstagram className='text-lg' />{' '}
+        <span className='text-lg'>Instagram</span>
       </a>
       {/* Twitter */}
       <a
@@ -33,11 +35,13 @@ const HeroSM: FC<HeroSMProps> = (props) => {
         target='_blank'
         rel='noreferrer noopener'
         className='flex items-center gap-1'>
-        <FaTwitter /> <span className='text-xs'>Twitter</span>
+        <FaTwitter className='text-lg' />{' '}
+        <span className='text-lg'>Twitter</span>
       </a>
       {showMessage ? (
         <Link href='/contact' className='flex items-center gap-1'>
-          <MdEmail /> <span className='text-xs'>Message</span>
+          <MdEmail className='text-lg' />{' '}
+          <span className='text-lg'>Message</span>
         </Link>
       ) : null}
     </div>
