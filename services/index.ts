@@ -11,6 +11,10 @@ export const getFeed = async () => {
         description
         date
         link
+        video
+        richText {
+          html
+        }
       }
     }
   `;

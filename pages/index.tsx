@@ -19,6 +19,7 @@ type homeProps = {
 
 export async function getStaticProps() {
   const feedList = (await getFeed()) || [];
+  // console.log(feedList);
 
   return {
     props: {
