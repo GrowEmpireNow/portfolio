@@ -11,9 +11,10 @@ type homeProps = {
   feedList: {
     id: string;
     title: string;
-    description: string;
     link: string;
     date: string;
+    video: string;
+    richText: { html: string };
   }[];
 };
 

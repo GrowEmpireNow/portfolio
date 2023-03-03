@@ -8,7 +8,6 @@ export const getFeed = async () => {
       feeds(orderBy: date_ASC) {
         id
         title
-        description
         date
         link
         video
