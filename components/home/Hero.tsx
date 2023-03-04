@@ -27,7 +27,7 @@ const Hero: FC<HeroProps> = (props) => {
               startup to the next level, but don&apos;t know where to start?
             </p>
             <p className='align-middle'>
-              EJump into our startup marketing blog Empire Now by Danny Lev.
+              Jump into our startup marketing blog Empire Now by Danny Lev.
             </p>
             <p className='align-middle'>Need more?</p>
             <p className='align-middle'>
