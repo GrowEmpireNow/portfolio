@@ -45,6 +45,7 @@ const Feed: FC<FeedProps> = (props) => {
                   {item.imageLink ? (
                     <div className='max-w-full aspect-video mb-8 relative'>
                       <Image
+                        className='rounded'
                         src={item.imageLink}
                         alt=''
                         width={584}
