@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Container from './Container';
 import { format } from 'date-fns';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 type FeedProps = {
@@ -11,12 +12,14 @@ type FeedProps = {
     link?: string;
     date: string;
     video: string;
+    imageLink: string;
     richText: { html: string };
   }[];
 };
 
 const Feed: FC<FeedProps> = (props) => {
   const { feedList } = props;
+
   return (
     <section className='pt-20 pb-5'>
       <Container>
@@ -38,9 +41,21 @@ const Feed: FC<FeedProps> = (props) => {
                       />
                     </div>
                   ) : null}
+                  {/*  && !item.link */}
+                  {item.imageLink ? (
+                    <div className='max-w-full aspect-video mb-8 relative'>
+                      <Image
+                        src={item.imageLink}
+                        alt=''
+                        width={584}
+                        height={320}
+                      />
+                    </div>
+                  ) : null}
                   <h3 className='text-xl text-rose-100/90 transition duration-300 line-clamp-2 hover:text-rose-100/90'>
                     {item.title}
                   </h3>
+                  {/* {console.log(item)} */}
                   <p className='text-rose-100/70'>
                     {format(new Date(item.date), 'MMM dd yyyy')}
                   </p>

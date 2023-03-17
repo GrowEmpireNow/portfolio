@@ -39,10 +39,14 @@ const HeroSM: FC<HeroSMProps> = (props) => {
         <span className='text-lg'>Twitter</span>
       </a>
       {showMessage ? (
-        <Link href='/contact' className='flex items-center gap-1'>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://calendly.com/lev-danny/30min'
+          className='flex items-center gap-1'>
           <MdEmail className='text-lg' />{' '}
-          <span className='text-lg'>Message</span>
-        </Link>
+          <span className='text-lg'>Let&apos;s Talk</span>
+        </a>
       ) : null}
     </div>
   );
