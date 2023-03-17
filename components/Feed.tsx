@@ -42,7 +42,7 @@ const Feed: FC<FeedProps> = (props) => {
                     </div>
                   ) : null}
                   {/*  && !item.link */}
-                  {item.imageLink ? (
+                  {item.imageLink && !item.video ? (
                     <div className='max-w-full aspect-video mb-8 relative'>
                       <Image
                         className='rounded'
@@ -75,6 +75,17 @@ const Feed: FC<FeedProps> = (props) => {
                         width={'100%'}
                         height={'100%'}
                         url={item.video}
+                      />
+                    </div>
+                  ) : null}
+                  {item.imageLink && !item.video ? (
+                    <div className='max-w-full aspect-video mb-8 relative'>
+                      <Image
+                        className='rounded'
+                        src={item.imageLink}
+                        alt=''
+                        width={584}
+                        height={320}
                       />
                     </div>
                   ) : null}
