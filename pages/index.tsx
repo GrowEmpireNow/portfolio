@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { GetStaticProps } from 'next';
 import Background from '@/components/Background';
 import Hero from '@/components/home/Hero';
 import { getFeed } from '@/services';
@@ -19,7 +20,7 @@ type homeProps = {
   }[];
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const feedList = (await getFeed()) || [];
   // console.log(feedList);
 
@@ -29,7 +30,7 @@ export async function getStaticProps() {
     },
     revalidate: 3600,
   };
-}
+};
 
 const home: FC<homeProps> = ({ feedList }) => {
   return (

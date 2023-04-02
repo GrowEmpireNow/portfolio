@@ -7,7 +7,7 @@ type BackgroundProps = {};
 
 const Background: FC<BackgroundProps> = ({}) => {
   return (
-    <>
+    <div>
       <div className='pointer-events-none absolute inset-0 overflow-hidden w-full max-w-[1500px] mx-auto'>
         <div style={{ transform: 'translateY(0px)' }}>
           <Image
@@ -35,7 +35,7 @@ const Background: FC<BackgroundProps> = ({}) => {
           height='100%'
           filter='url(#pedroduarteisalegend)'></rect>
       </svg>
-    </>
+    </div>
   );
 };
 

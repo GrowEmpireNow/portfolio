@@ -1,4 +1,5 @@
-import { FC } from 'react';
+'use client';
+import { FC, useState, useEffect } from 'react';
 import Container from './Container';
 import { format } from 'date-fns';
 import dynamic from 'next/dynamic';
@@ -19,94 +20,103 @@ type FeedProps = {
 
 const Feed: FC<FeedProps> = (props) => {
   const { feedList } = props;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section className='pt-20 pb-5'>
-      <Container>
-        <ul className='flex flex-col gap-9'>
-          {feedList.map((item) => (
-            <li key={item.id}>
-              {item.link ? (
-                <a
-                  target='_blank'
-                  rel='noreferrer'
-                  className='block overflow-hidden rounded-2xl bg-white/5 p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/10 hover:shadow-surface-elevation-medium focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70'
-                  href={item.link}>
-                  {item.video ? (
-                    <div className='max-w-full aspect-video mb-8'>
-                      <ReactPlayer
-                        width={'100%'}
-                        height={'100%'}
-                        url={item.video}
-                      />
+      {mounted && (
+        <Container>
+          <ul className='flex flex-col gap-9'>
+            {feedList.map((item) => (
+              <li key={item.id}>
+                {item.link ? (
+                  <a
+                    target='_blank'
+                    rel='noreferrer'
+                    className='block overflow-hidden rounded-2xl bg-white/5 p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/10 hover:shadow-surface-elevation-medium focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70'
+                    href={item.link}>
+                    <div>
+                      {item.video ? (
+                        <div className='max-w-full aspect-video mb-8'>
+                          <ReactPlayer
+                            width={'100%'}
+                            height={'100%'}
+                            url={item.video}
+                          />
+                        </div>
+                      ) : null}
+                      {item.imageLink && !item.video ? (
+                        <figure className='max-w-full aspect-video mb-8 relative'>
+                          <Image
+                            className='rounded'
+                            src={item.imageLink}
+                            alt=''
+                            width={584}
+                            height={320}
+                          />
+                        </figure>
+                      ) : null}
+                      <h3 className='text-xl text-rose-100/90 transition duration-300 line-clamp-2 hover:text-rose-100/90'>
+                        {item.title}
+                      </h3>
+                      {/* {console.log(item)} */}
+                      <p className='text-rose-100/70'>
+                        {format(new Date(item.date), 'MMM dd yyyy')}
+                      </p>
+                      {item.richText.html ? (
+                        <div
+                          className='prose prose-base prose-rose prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-img:rounded-lg mt-4 prose-p:text-rose-100/70 transition-all duration-500 overflow-hidden'
+                          dangerouslySetInnerHTML={{
+                            __html: item.richText.html,
+                          }}
+                        />
+                      ) : null}
                     </div>
-                  ) : null}
-                  {/*  && !item.link */}
-                  {item.imageLink && !item.video ? (
-                    <div className='max-w-full aspect-video mb-8 relative'>
-                      <Image
-                        className='rounded'
-                        src={item.imageLink}
-                        alt=''
-                        width={584}
-                        height={320}
+                  </a>
+                ) : (
+                  <div className='block overflow-hidden rounded-2xl bg-white/5 p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/10 hover:shadow-surface-elevation-medium focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70'>
+                    {item.video ? (
+                      <div className='max-w-full aspect-video mb-8'>
+                        <ReactPlayer
+                          width={'100%'}
+                          height={'100%'}
+                          url={item.video}
+                        />
+                      </div>
+                    ) : null}
+                    {item.imageLink && !item.video ? (
+                      <figure className='max-w-full aspect-video mb-8 relative'>
+                        <Image
+                          className='rounded'
+                          src={item.imageLink}
+                          alt=''
+                          width={584}
+                          height={320}
+                        />
+                      </figure>
+                    ) : null}
+                    <h3 className='text-xl text-rose-100/90 transition duration-300 line-clamp-2 hover:text-rose-100/90'>
+                      {item.title}
+                    </h3>
+                    <p className='text-rose-100/70'>
+                      {format(new Date(item.date), 'MMM dd')}
+                    </p>
+                    {item.richText.html ? (
+                      <div
+                        className='prose prose-base prose-rose prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-img:rounded-lg mt-4 prose-p:text-rose-100/70 transition-all duration-500 overflow-hidden'
+                        dangerouslySetInnerHTML={{ __html: item.richText.html }}
                       />
-                    </div>
-                  ) : null}
-                  <h3 className='text-xl text-rose-100/90 transition duration-300 line-clamp-2 hover:text-rose-100/90'>
-                    {item.title}
-                  </h3>
-                  {/* {console.log(item)} */}
-                  <p className='text-rose-100/70'>
-                    {format(new Date(item.date), 'MMM dd yyyy')}
-                  </p>
-                  {item.richText.html ? (
-                    <article
-                      className='prose prose-base prose-rose prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-img:rounded-lg mt-4 prose-p:text-rose-100/70 transition-all duration-500 overflow-hidden'
-                      dangerouslySetInnerHTML={{ __html: item.richText.html }}
-                    />
-                  ) : null}
-                </a>
-              ) : (
-                <div className='block overflow-hidden rounded-2xl bg-white/5 p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/10 hover:shadow-surface-elevation-medium focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70'>
-                  {item.video ? (
-                    <div className='max-w-full aspect-video mb-8'>
-                      <ReactPlayer
-                        width={'100%'}
-                        height={'100%'}
-                        url={item.video}
-                      />
-                    </div>
-                  ) : null}
-                  {item.imageLink && !item.video ? (
-                    <div className='max-w-full aspect-video mb-8 relative'>
-                      <Image
-                        className='rounded'
-                        src={item.imageLink}
-                        alt=''
-                        width={584}
-                        height={320}
-                      />
-                    </div>
-                  ) : null}
-                  <h3 className='text-xl text-rose-100/90 transition duration-300 line-clamp-2 hover:text-rose-100/90'>
-                    {item.title}
-                  </h3>
-                  <p className='text-rose-100/70'>
-                    {format(new Date(item.date), 'MMM dd')}
-                  </p>
-                  {item.richText.html ? (
-                    <article
-                      className='prose prose-base prose-rose prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-img:rounded-lg mt-4 prose-p:text-rose-100/70 transition-all duration-500 overflow-hidden'
-                      dangerouslySetInnerHTML={{ __html: item.richText.html }}
-                    />
-                  ) : null}
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-      </Container>
+                    ) : null}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      )}
     </section>
   );
 };
