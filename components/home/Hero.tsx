@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = (props) => {
                 className='underline text-rose-100/90 transition hover:text-rose-100'
                 target='_blank'
                 rel='noreferrer'
-                href='bit.ly/mktghotline'>
+                href='http://bit.ly/mktghotline'>
                 Marketing Hotline
               </a>
               . Whether you&apos;re an early stage or seasoned startup -
